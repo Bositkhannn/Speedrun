@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uz-Latn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1" />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>JLPT N3 · Grammatika</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            jp: ['"Hiragino Sans"', '"Noto Sans JP"', '"Yu Gothic"', 'sans-serif'],
+          },
+          keyframes: {
+            pop: { '0%': { transform: 'scale(0.9)', opacity: 0 }, '100%': { transform: 'scale(1)', opacity: 1 } },
+            shake: { '0%,100%': { transform: 'translateX(0)' }, '25%': { transform: 'translateX(-4px)' }, '75%': { transform: 'translateX(4px)' } },
+          },
+          animation: { pop: 'pop 0.25s ease-out', shake: 'shake 0.35s ease' },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased font-jp">
+
+  <main id="screen" class="screen"></main>
+
+  <nav class="bottom-nav" aria-label="Asosiy navigatsiya"></nav>
+
+  <div id="modalBackdrop" class="modal-backdrop"></div>
+  <aside id="modalPanel" class="modal-panel" role="dialog" aria-modal="true">
+    <div id="modalContent" class="flex flex-col h-full"></div>
+  </aside>
+
+  <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
